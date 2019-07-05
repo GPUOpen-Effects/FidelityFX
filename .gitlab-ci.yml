@@ -1,0 +1,67 @@
+variables:
+  SolutionDirDX12: FFX_CAS\cas-samples\build\DX12  
+  SolutionDX12: CAS_Sample_DX12.sln
+  SolutionDirVK: FFX_CAS\cas-samples\build\VK
+  SolutionVK: CAS_Sample_VK.sln
+  GIT_SUBMODULE_STRATEGY: normal
+
+before_script:
+  - 'for /f "usebackq delims=" %%i in (`vswhere.exe  -products Microsoft.VisualStudio.Product.BuildTools -property installationPath`) do set MSBUILD_PATH=%%i'
+  - 'call "%MSBUILD_PATH%\VC\Auxiliary\Build\vcvars64.bat"'
+  - 'cd FFX_CAS\cas-samples\build'
+  - 'call GenerateSolutions.bat'
+  - 'cd ../../..'
+  
+stages:
+  - build
+  - deploy
+
+build CAS d3d12 sample release:
+  tags:
+  - windows
+  - amd64
+  stage: build
+  script:
+  - echo Building %SolutionDX12%
+  - cd %SolutionDirDX12%
+  - 'msbuild.exe "%SolutionDX12%" /p:Configuration=Release /p:Platform=x64'
+
+build CAS vk sample release:
+  tags:
+  - windows
+  - amd64
+  stage: build
+  script:
+  - echo Building %SolutionVK%
+  - cd %SolutionDirVK%
+  - 'msbuild.exe "%SolutionVK%" /p:Configuration=Release /p:Platform=x64'
+
+build CAS d3d12 vk sample release:
+  tags:
+  - windows
+  - amd64
+  stage: deploy
+  except:
+  - tags  
+  script:
+  - echo Building %SolutionVK%
+  - cd %SolutionDirVK%
+  - 'msbuild.exe "%SolutionVK%" /p:Configuration=Release /p:Platform=x64'
+  - cd ../../../..
+  - cd %SolutionDirDX12%
+  - 'msbuild.exe "%SolutionDX12%" /p:Configuration=Release /p:Platform=x64'
+  - cd ../../../..
+  artifacts:
+      name: "CAS_Sample-%CI_COMMIT_REF_NAME%-%CI_COMMIT_SHORT_SHA%"
+      paths:
+      - LICENSE.txt
+      - FFX_CAS/cas-samples/bin/dxcompiler.dll
+      - FFX_CAS/cas-samples/bin/dxil.dll
+      - FFX_CAS/cas-samples/bin/amd_ags_x64.dll
+      - FFX_CAS/cas-samples/bin/brdfLut.dds
+      - FFX_CAS/cas-samples/bin/CAS_Sample_VK.exe
+      - FFX_CAS/cas-samples/bin/CAS_Sample_DX12.exe
+      - FFX_CAS/cas-samples/bin/ShaderLibDX/*.*
+      - FFX_CAS/cas-samples/bin/ShaderLibVK/*.*
+      - FFX_CAS/cauldron-media/
+  
