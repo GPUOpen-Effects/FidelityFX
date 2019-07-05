@@ -45,7 +45,7 @@ void CAS_Sample::OnCreate(HWND hWnd)
 {
     // Create Device
     //
-    m_device.OnCreate("CAS VK Sample v0.99", "CAS VK Engine v0.99", VALIDATION_ENABLED, hWnd);
+    m_device.OnCreate("CAS VK Sample v1.0", "CAS VK Engine v1.0", VALIDATION_ENABLED, hWnd);
     m_device.CreatePipelineCache();
 
     //init the shader compiler
@@ -535,7 +535,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     LPSTR lpCmdLine,
     int nCmdShow)
 {
-    LPCSTR Name = "CAS VK Sample v0.99";
+    LPCSTR Name = "CAS VK Sample v1.0";
     uint32_t Width = 1280;
     uint32_t Height = 720;
 

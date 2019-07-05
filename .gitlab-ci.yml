@@ -61,7 +61,7 @@ build CAS d3d12 vk sample release:
       - FFX_CAS/cas-samples/bin/brdfLut.dds
       - FFX_CAS/cas-samples/bin/CAS_Sample_VK.exe
       - FFX_CAS/cas-samples/bin/CAS_Sample_DX12.exe
-      - FFX_CAS/cas-samples/bin/ShaderLibDX/*.*
-      - FFX_CAS/cas-samples/bin/ShaderLibVK/*.*
+      - FFX_CAS/cas-samples/bin/ShaderLibDX
+      - FFX_CAS/cas-samples/bin/ShaderLibVK
       - FFX_CAS/cauldron-media/
   
