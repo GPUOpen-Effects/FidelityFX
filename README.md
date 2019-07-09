@@ -4,6 +4,8 @@ FidelityFX is a suite of techniques provided by AMD which help solve common prob
 
 The directory structure in this repository is as follows:
 
-- FFX_CAS contains FidelityFX CAS (Contrast Adaptive Sharpening), which is a technique that provides efficient and high quality sharpening with optional upsampling. 
+- FFX_CAS contains FidelityFX CAS (Contrast Adaptive Sharpening), which is a technique that provides efficient and high quality sharpening with optional upsampling.
 
 You can find the binaries for the FidelityFX effects in the release section of this github repository.
+
+A naming guideline document is available for developers wishing to integrate any FidelityFX technology into their games or applications: [FidelityFX - Naming guidelines in game titles](FidelityFX%20-%20Naming%20guidelines%20in%20game%20titles.pdf)
