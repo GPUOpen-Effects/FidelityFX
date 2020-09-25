@@ -1,8 +1,8 @@
 # FidelityFX
 
-FidelityFX is out series of optimized, shader-based features aimed at improving rendering quality and performance.
+FidelityFX is our series of optimized, shader-based features aimed at improving rendering quality and performance.
 
-These features are designed to be easy to integrate, we ship HLSL and/or GLSL versions of the effects to allow you to target any API.
+These features are designed to be easy to integrate, and we ship HLSL and/or GLSL versions of the effects to allow you to target any API.
 
 ## Contrast Adaptive Sharpening (CAS)
 CAS is a low overhead adaptive sharpening algorithm with optional up-sampling.
