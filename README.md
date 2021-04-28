@@ -38,3 +38,24 @@ SSSR is a highly optimized hierarchical screen space traversal kernel for reflec
 Find out more:
 - [FidelityFX SSSR source code](https://github.com/GPUOpen-Effects/FidelityFX-SSSR/)
 - [FidelityFX SSSR on GPUOpen](https://gpuopen.com/fidelityfx-sssr)
+
+## Variable Shading
+Variable Shading is a technique to generate image based VRS based on luminance of samples in the previous frame.
+
+Find out more:
+- [FidelityFX Variable Shading source code](https://github.com/GPUOpen-Effects/FidelityFX-VariableShading)
+- [FidelityFX Variable Shading on GPUOpen](https://gpuopen.com/fidelityfx-variable-shading/)
+
+## Parallel Sort
+Parallel Sort provides an easy to integrate, highly optimized compute-based radix sort.
+
+Find out more:
+- [FidelityFX Parallel Sort source code](https://github.com/GPUOpen-Effects/FidelityFX-ParallelSort)
+- [FidelityFX Parallel Sort on GPUOpen](https://gpuopen.com/fidelityfx-parallel-sort/)
+
+## Denoiser
+FidelityFX Denoiser contains a highly optimized denoiser implementation for reflection data.
+
+Find out more:
+- [FidelityFX Denoiser source code](https://github.com/GPUOpen-Effects/FidelityFX-Denoiser)
+- [FidelityFX Denoiser on GPUOpen](https://gpuopen.com/fidelityfx-denoiser/)
